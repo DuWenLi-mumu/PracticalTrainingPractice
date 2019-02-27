@@ -27,8 +27,6 @@ public class BrvahAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
         helper.addOnClickListener(R.id.iv_head)
                 .addOnClickListener(R.id.tv_title);
-
-
         helper.setText(R.id.tv_title,item+"标题");
         helper.setText(R.id.tv_content,"内容");
 

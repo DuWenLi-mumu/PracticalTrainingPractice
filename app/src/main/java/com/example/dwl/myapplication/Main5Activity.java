@@ -13,8 +13,10 @@ import com.example.dwl.myapplication.adapter.BrvahAdapter;
 import java.util.ArrayList;
 
 /**
- * Author: MR. WU
+ * Author: 18749
  * Description:  brvah的使用
+ * 下拉列表下滑的操作
+ * 使用框架实现不同的菜单样式
  */
 public class Main5Activity extends AppCompatActivity {
 
@@ -29,14 +31,14 @@ public class Main5Activity extends AppCompatActivity {
         ArrayList<String> arrayList = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {
-            arrayList.add("" + i);
+            arrayList.add(String.valueOf(i));
         }
-        adapter = new BrvahAdapter(R.layout.item_list, arrayList);
+        adapter = new BrvahAdapter(R.layout.item_list, arrayList);//适配器用来获取每个列表的单行数据
 
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ToastUtils.showShort("" + position);
+                ToastUtils.showShort(String.valueOf(position));
             }
         });
 
@@ -46,12 +48,11 @@ public class Main5Activity extends AppCompatActivity {
 
                 switch (view.getId()) {
                     case R.id.iv_head:
-                        ToastUtils.showShort("头像" + position);
+                        ToastUtils.showShort("头像" + String.valueOf(position));
                         break;
                     case R.id.tv_title:
-                        ToastUtils.showShort("标题" + position);
+                        ToastUtils.showShort("标题" + String.valueOf(position));
                         break;
-
                 }
 
             }
@@ -62,7 +63,5 @@ public class Main5Activity extends AppCompatActivity {
         adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapter);
-
-
     }
 }

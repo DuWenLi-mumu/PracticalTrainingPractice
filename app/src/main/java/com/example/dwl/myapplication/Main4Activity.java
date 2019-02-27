@@ -30,7 +30,7 @@ public class Main4Activity extends AppCompatActivity {
         srf.setColorSchemeColors(getResources().getColor(R.color.red));
         ArrayList list = new ArrayList();
         for (int i = 0; i < 100; i++) {
-            list.add(i+"");
+            list.add(String.valueOf(i));
 
         }
 
