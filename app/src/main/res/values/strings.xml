@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="put_login_info">登录信息</string>
+
+</resources>
